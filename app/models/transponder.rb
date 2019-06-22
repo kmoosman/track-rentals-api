@@ -1,0 +1,2 @@
+class Transponder < ApplicationRecord
+end
