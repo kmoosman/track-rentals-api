@@ -6,10 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-events: [{name: "USGP Round 1", date: "April 24th, 2019", location: "Austin, TX", 
-            transponders: [{number: 1, rented: true, rented_by: "John Williams" },
-                          {number: 2, rented: false, rented_by: ""}] },
-    {name: "USGP Round 2", date: "June 26th, 2019", location: "Tooele, UT", 
-    transponders: [{number: 1, rented: true, rented_by: "John Williams"},
-                  {number: 2, rented: false, rented_by: ""}]}
-            ],
+# events: [{name: "USGP Round 1", date: "April 24th, 2019", location: "Austin, TX", 
+#             transponders: [{number: 1, rented: true, rented_by: "John Williams" },
+#                           {number: 2, rented: false, rented_by: ""}] },
+#     {name: "USGP Round 2", date: "June 26th, 2019", location: "Tooele, UT", 
+#     transponders: [{number: 1, rented: true, rented_by: "John Williams"},
+#                   {number: 2, rented: false, rented_by: ""}]}
+#             ],
+
+event = Event.create({name: "USGP Round 1", date: "April 24th, 2019", location: "Austin, TX"})
+transponder = Transponder.create({ number: 1, rented: true, rented_by: "John Williams", event_id: 1})
