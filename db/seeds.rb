@@ -19,4 +19,4 @@ Event.create({name: "USGP Round 2", date: "May 31st, 2019", location: "Austin, T
 Transponder.create({ number: 1, rented: true, rented_by: "John Williams", event_id: 1})
 Transponder.create({ number: 2, rented: false, rented_by: "", event_id: 1})
 Transponder.create({ number: 1, rented: true, rented_by: "Katie Moosman", event_id: 2})
-Transponder.create({ number: 2, rented: false, rented_by: "", event_id: 1})
+Transponder.create({ number: 2, rented: false, rented_by: "", event_id: 2})
