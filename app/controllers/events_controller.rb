@@ -20,6 +20,26 @@ class EventsController < ApplicationController
     end
   end
 
+  def update 
+    number = params[:number]
+    event_id = params[:event_id]
+    rented = params[:rented]
+    rented_by = params[:rented_by]
+
+    @event = Event.find(event_id)
+    # binding.pry
+    
+    @transponder = Transponder.find(@event.transponders.find_by(number: number).id)
+    @transponder.rented = false
+    @transponder.rented_by = ""
+    
+    if @transponder.save
+      render json: @event
+    else 
+      render json: @transponder.errors, status: :unprocessable_entity
+    end
+  end 
+
   private 
   def event_params
     params.require(:event).permit(:name, :date, :location)
