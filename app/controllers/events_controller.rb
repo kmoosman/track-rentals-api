@@ -30,8 +30,9 @@ class EventsController < ApplicationController
     # binding.pry
     
     @transponder = Transponder.find(@event.transponders.find_by(number: number).id)
-    @transponder.rented = false
-    @transponder.rented_by = ""
+    @transponder.rented = !@transponder.rented
+    @transponder.rented_by = rented_by
+    
     
     if @transponder.save
       render json: @transponder
