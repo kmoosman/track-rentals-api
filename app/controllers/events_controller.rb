@@ -34,7 +34,7 @@ class EventsController < ApplicationController
     @transponder.rented_by = ""
     
     if @transponder.save
-      render json: @event
+      render json: @transponder
     else 
       render json: @transponder.errors, status: :unprocessable_entity
     end
